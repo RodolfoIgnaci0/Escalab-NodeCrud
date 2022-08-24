@@ -39,7 +39,7 @@ ArticleRouter.route('/article/:id')
     .post(async (req, res) => {
         const { body: { name, price } } = req
         const userId = req.params.id
-        
+
         const articleService = new ArticleService({ name, price, userId })
         
         try {
@@ -63,6 +63,21 @@ ArticleRouter.route('/article/:id')
           response({ error: false, message: article, res, status: 200 })
         } catch (error) {
           console.log(error)
+        }
+      })
+      .patch(async (req,res) => {
+        const {
+          body: { name, price },
+          params: { id }
+        } = req
+
+        const articleService = new ArticleService({ id, name, price })
+
+        try {
+          const article = await articleService.updateArticle(name, price)
+          response({ error: false, message: article, res, status: 200 })
+        } catch (error) {
+          console.error(error)
         }
       })
 

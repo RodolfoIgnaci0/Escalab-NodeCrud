@@ -61,7 +61,17 @@ GET http://localhost:2000/article
 
 
 ### Get article
-GET http://localhost:2000/article/0kBQb6
+GET http://localhost:2000/article/v8rIHW
 
 ### delete article
-DELETE http://localhost:2000/article/kq1xGG
+DELETE http://localhost:2000/article/mO7hAQ
+
+### update article
+PATCH http://localhost:2000/article/jgFrHB
+Content-Type: application/json
+
+{
+  "name": "articulonuevo",
+  "price": 2000000
+}
+

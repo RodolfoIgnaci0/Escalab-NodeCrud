@@ -33,9 +33,21 @@ const deleteOneArticle = async id => {
   return deletedArticle
 }
 
+const updateAnArticle = async (id, article) => {
+  const { name, price } = article
+  const articleUpdated = await ArticleModel.findOneAndUpdate(
+    { id },
+    { name, price },
+    { new: true }
+  )
+
+  return articleUpdated
+}
+
 module.exports = {
   saveArticle,
   getArticles,
   getOneArticle,
-  deleteOneArticle
+  deleteOneArticle,
+  updateAnArticle
 }
