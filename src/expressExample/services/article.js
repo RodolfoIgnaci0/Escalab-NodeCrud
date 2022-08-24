@@ -13,7 +13,7 @@ class ArticleService {
   /**
    * @param {Object} args
    * @param {String|undefined} args.id
-   * @param {String|undefined} args.link
+   * @param {Number|undefined} args.price
    * @param {String|undefined} args.userId
    */
   constructor(args) {
@@ -26,8 +26,7 @@ class ArticleService {
   }
 
   async saveArticle() {
-    if (!this.#userId)
-      throw new Error('Missing required field: userId')
+    
 
     const userService = new UserService(this.#userId)
     const foundUser = await userService.verifyUserExists()

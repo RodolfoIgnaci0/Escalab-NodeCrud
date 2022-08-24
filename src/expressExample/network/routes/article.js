@@ -24,7 +24,7 @@ ArticleRouter.route('/article')
 // un articulo especifico
 ArticleRouter.route('/article/:id')
     .get(async (req,res) => {
-      const {params: { id } } = req
+      const { params: { id } } = req
 
       try {  
         const articleService = new ArticleService({ id })
@@ -37,10 +37,9 @@ ArticleRouter.route('/article/:id')
       }
     })
     .post(async (req, res) => {
-        const {
-          body: { name, price },
-          params: { userId }
-        } = req
+        const { body: { name, price } } = req
+        const userId = req.params.id
+        
         const articleService = new ArticleService({ name, price, userId })
         
         try {

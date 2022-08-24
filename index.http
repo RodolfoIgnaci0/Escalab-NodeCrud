@@ -52,8 +52,8 @@ POST http://localhost:2000/article/qh-kaGQx6-7WqvR_2g8Ay
 Content-Type: application/json
 
 {
-  "name": "articuloMil",
-  "price": 150
+  "name": "articulo200",
+  "price": 230
 }
 
 ### Get all articles
