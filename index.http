@@ -9,9 +9,9 @@ POST http://localhost:2000/user
 Content-Type: application/json
 
 {
-  "name": "Anthony",
-  "lastName": "Luzquiños",
-  "email": "anthony.luzquinos@gmail.com"
+  "name": "Rodolfo",
+  "lastName": "Perez",
+  "email": "rodolfo.luzquinos@gmail.com"
 }
 
 ### Delete a user by id
@@ -48,7 +48,7 @@ GET http://localhost:2000/url/H_DIj2
 
 
 ### save an article
-POST http://localhost:2000/article/QCmAXeD9Ghk0uFxO3VYVl
+POST http://localhost:2000/article/qh-kaGQx6-7WqvR_2g8Ay
 Content-Type: application/json
 
 {
@@ -62,3 +62,6 @@ GET http://localhost:2000/article
 
 ### Get article
 GET http://localhost:2000/article/0kBQb6
+
+### delete article
+DELETE http://localhost:2000/article/kq1xGG

@@ -28,8 +28,14 @@ const getArticles = async () => {
   return articles
 }
 
+const deleteOneArticle = async id => {
+  const deletedArticle = await ArticleModel.findOneAndRemove({ id }).populate('userId')
+  return deletedArticle
+}
+
 module.exports = {
   saveArticle,
   getArticles,
-  getOneArticle
+  getOneArticle,
+  deleteOneArticle
 }

@@ -55,6 +55,17 @@ ArticleRouter.route('/article/:id')
           console.error(error)
         }
       })
+      .delete(async (req,res) => {
+        const {params: {id} } = req
+
+        try {
+          const articleService = new ArticleService({ id })
+          const article = await articleService.deleteArticle()
+          response({ error: false, message: article, res, status: 200 })
+        } catch (error) {
+          console.log(error)
+        }
+      })
 
 
 module.exports = ArticleRouter
